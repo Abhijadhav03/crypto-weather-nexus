@@ -1,8 +1,8 @@
-// app/page.js
 'use client';
 
 import Link from 'next/link';
 import { useEffect } from 'react';
+import { ModeToggle } from '../components/mode-toggle';
 
 export default function LandingPage() {
   useEffect(() => {
@@ -11,7 +11,13 @@ export default function LandingPage() {
 
   return (
     <div className="relative flex flex-col items-center justify-center min-h-screen overflow-hidden bg-gradient-to-br from-pink-100 via-white to-purple-100 text-center text-gray-800">
-      {/* Multi-colored, fading blobs */}
+      
+      {/* === Theme Toggle Button === */}
+      <div className="absolute top-4 right-4 z-20">
+        <ModeToggle />
+      </div>
+
+      {/* === Animated Blobs === */}
       <div className="absolute w-[30rem] h-[30rem] bg-pink-300 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blobFade top-[-5rem] left-[-5rem] z-0" />
       <div className="absolute w-[35rem] h-[35rem] bg-yellow-300 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blobFade animation-delay-2000 top-[25%] right-[-10rem] z-0" />
       <div className="absolute w-[40rem] h-[40rem] bg-sky-300 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blobFade animation-delay-4000 bottom-[-10rem] left-[10%] z-0" />

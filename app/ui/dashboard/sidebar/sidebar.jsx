@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { useState } from 'react';
 import {
   Menu, X, Cloud, Bitcoin, Newspaper, LayoutDashboard,
-  User, Settings, Activity, Bell, LogOut, BarChart
+  User, Settings, Bell, LogOut
 } from 'lucide-react';
 
 export default function Sidebar() {
@@ -25,7 +25,7 @@ export default function Sidebar() {
         className={`
           fixed top-0 left-0 h-screen w-72 bg-[#0f172a] text-white p-6 border-r border-slate-700 z-40 shadow-lg
           overflow-y-auto
-          transform transition-transform duration-300 ease-in-out
+          transform-gpu transition-transform duration-300 ease-in-out
           ${isOpen ? 'translate-x-0' : '-translate-x-full'}
           md:translate-x-0 md:static md:block
         `}
@@ -39,11 +39,11 @@ export default function Sidebar() {
         {/* Navigation */}
         <nav className="space-y-2">
           <NavItem href="/dashboard/weather" icon={<Cloud size={20} />} label="Weather" onClick={() => setIsOpen(false)} />
-          <NavItem href="/dashboard/crypto-prices" icon={<Bitcoin size={20} />} label="Crypto Prices" onClick={() => setIsOpen(false)} />
-          <NavItem href="/dashboard/crypto-news" icon={<Newspaper size={20} />} label="Crypto News" onClick={() => setIsOpen(false)} />
-          <NavItem href="" icon={<Bell size={20} />} label="Notifications" onClick={() => setIsOpen(false)} />
-          <NavItem href="" icon={<User size={20} />} label="Users" onClick={() => setIsOpen(false)} />
-          <NavItem href="" icon={<Settings size={20} />} label="Settings" onClick={() => setIsOpen(false)} />
+          <NavItem href="/dashboard/cryptoprices" icon={<Bitcoin size={20} />} label="Crypto Prices" onClick={() => setIsOpen(false)} />
+          <NavItem href="/dashboard/cryptonews" icon={<Newspaper size={20} />} label="Crypto News" onClick={() => setIsOpen(false)} />
+          <NavItem href="#" icon={<Bell size={20} />} label="Notifications" onClick={() => setIsOpen(false)} />
+          <NavItem href="#" icon={<User size={20} />} label="Users" onClick={() => setIsOpen(false)} />
+          <NavItem href="#" icon={<Settings size={20} />} label="Settings" onClick={() => setIsOpen(false)} />
 
           <hr className="my-4 border-slate-700" />
 
