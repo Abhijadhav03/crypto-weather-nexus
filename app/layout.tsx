@@ -1,8 +1,11 @@
+import './globals.css';
+import ReactQueryProvider from '@/context/react-query-provider';
 import { Inter } from 'next/font/google'
 import './globals.css'
 import { ThemeProvider } from '@/context/theme-provider'
-
+import type { Metadata } from 'next';
 const inter = Inter({ subsets: ['latin'] })
+import Providers from './providers';
 
 export const metadata = {
   title: 'Crypto weather nexus',
@@ -19,8 +22,9 @@ export default function RootLayout({ children }) {
           defaultTheme="system"
           enableSystem
           disableTransitionOnChange
-        >
+        ><ReactQueryProvider>
           {children}
+          </ReactQueryProvider>
         </ThemeProvider>
       </body>
     </html>

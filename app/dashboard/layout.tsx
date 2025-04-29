@@ -1,30 +1,54 @@
 'use client';
 
+import { useEffect, useState } from 'react';
+import { usePathname } from 'next/navigation';
+import Navbar from '../ui/dashboard/navbar/navbar';
 import Sidebar from '../ui/dashboard/sidebar/sidebar';
-import Navbar from '../ui/dashboard/navbar/navbar'
 
-export default function DashboardLayout({ children }: { children: React.ReactNode }) {
+const Layout = ({ children }) => {
+  const [isSidebarOpen, setSidebarOpen] = useState(false);
+  const [isCollapsed, setIsCollapsed] = useState(false);
+  const pathname = usePathname();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  // Dynamically setting sidebar margin based on collapse state
+  const sidebarWidth = isCollapsed ? 'md:w-16' : 'md:w-72';
+
   return (
-    <div className="relative flex bg-[#0f172a] text-white min-h-screen">
-      {/* Sidebar */}
-      <Sidebar />
+    <div className="flex bg-[#0f172a] text-white min-h-screen relative">
+      {/* Sidebar Component */}
+      <Sidebar
+        isOpen={isSidebarOpen}
+        setIsOpen={setSidebarOpen}
+        isCollapsed={isCollapsed}
+        setIsCollapsed={setIsCollapsed}
+      />
+
+      {/* Mobile Overlay (Visible when sidebar is open on mobile) */}
+      {isSidebarOpen && (
+        <div
+          onClick={() => setSidebarOpen(false)}
+          className="fixed inset-0 bg-black/50 z-30 md:hidden"
+        />
+      )}
 
       {/* Main Content Area */}
-      <div className="flex-1 flex flex-col min-h-screen ml-0 md:ml-72 z-0 relative">
-        {/* Fixed Navbar */}
-        <div className="fixed top-0 left-0 md:left-72 right-0 z-30">
-          <Navbar />
-        </div>
+      <div className={`flex-1 flex flex-col min-h-screen ml-0 ${sidebarWidth}`}>
+        {/* Navbar Component */}
+        <Navbar onToggleSidebar={() => setSidebarOpen(!isSidebarOpen)} />
 
-        {/* Page Content */}
-        <main className="pt-16 p-6 bg-[#0f172a] flex-1 overflow-y-auto">
+        {/* Main Content with Padding */}
+        <main className="pt-20 p-6 bg-[#0f172a] flex-1 overflow-y-auto">
           {children}
         </main>
       </div>
     </div>
   );
-}
+};
 
-
+export default Layout;
 
 

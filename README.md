@@ -87,3 +87,89 @@ crypto-weather-nexus
 └─ tsconfig.json
 
 ```
+
+```
+crypto-weather-nexus
+├─ api
+│  ├─ config.ts
+│  ├─ types.ts
+│  └─ weather.ts
+├─ app
+│  ├─ dashboard
+│  │  ├─ cryptonews
+│  │  │  └─ page.tsx
+│  │  ├─ cryptoprices
+│  │  │  └─ page.tsx
+│  │  ├─ layout.tsx
+│  │  ├─ page.tsx
+│  │  └─ weather
+│  │     ├─ city
+│  │     │  └─ [name]
+│  │     │     └─ page.tsx
+│  │     └─ page.tsx
+│  ├─ favicon.ico
+│  ├─ globals.css
+│  ├─ layout.tsx
+│  ├─ page.tsx
+│  ├─ providers.tsx
+│  └─ ui
+│     ├─ current-weather.tsx
+│     ├─ dashboard
+│     │  ├─ navbar
+│     │  │  └─ navbar.jsx
+│     │  ├─ sidebar
+│     │  │  └─ sidebar.jsx
+│     │  └─ weather-dashboard.jsx
+│     └─ loading-skeleton.tsx
+├─ components
+│  ├─ CitySearch.tsx
+│  ├─ CurrentWeather.tsx
+│  ├─ FavoriteCities.tsx
+│  ├─ Header.tsx
+│  ├─ HourlyTemperature.tsx
+│  ├─ layout.tsx
+│  ├─ loading-skeleton.tsx
+│  ├─ mode-toggle.tsx
+│  ├─ ui
+│  │  ├─ alert.tsx
+│  │  ├─ button.tsx
+│  │  ├─ card.tsx
+│  │  ├─ command.tsx
+│  │  ├─ dialog.tsx
+│  │  ├─ dropdown-menu.tsx
+│  │  ├─ input.tsx
+│  │  ├─ scroll-area.tsx
+│  │  ├─ skeleton.tsx
+│  │  ├─ sonner.tsx
+│  │  └─ tooltip.tsx
+│  ├─ WeatherDetails.tsx
+│  └─ WeatherForecast.tsx
+├─ components.json
+├─ context
+│  ├─ react-query-provider.tsx
+│  └─ theme-provider.tsx
+├─ eslint.config.mjs
+├─ hooks
+│  ├─ use-favorite.ts
+│  ├─ use-geolocation.ts
+│  ├─ use-local-storage.ts
+│  ├─ use-search-history.ts
+│  └─ use-weather.ts
+├─ lib
+│  └─ utils.ts
+├─ next.config.ts
+├─ package-lock.json
+├─ package.json
+├─ postcss.config.mjs
+├─ public
+│  ├─ file.svg
+│  ├─ globe.svg
+│  ├─ next.svg
+│  ├─ vercel.svg
+│  └─ window.svg
+├─ README.md
+├─ styles
+│  └─ globals.css
+└─ tsconfig.json
+
+```

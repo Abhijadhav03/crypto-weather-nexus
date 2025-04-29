@@ -1,6 +1,4 @@
-// app/components/layout/Navbar.js
 'use client';
-
 import { Menu } from 'lucide-react';
 import { useState } from 'react';
 
@@ -11,7 +9,7 @@ export default function Navbar({ onToggleSidebar }) {
         {/* Mobile Toggle Button */}
         <button
           onClick={onToggleSidebar}
-          className="md:hidden text-white hover:text-gray-300 transition"
+          className="flex md:hidden text-white hover:text-gray-300 transition"
         >
           <Menu size={24} />
         </button>
@@ -25,4 +23,3 @@ export default function Navbar({ onToggleSidebar }) {
     </header>
   );
 }
-
